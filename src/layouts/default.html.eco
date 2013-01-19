@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title><%= @document.title %></title>
+  <title><%= @site.title %></title>
   <%- @getBlock('meta').toHTML() %>
   <%- @getBlock('styles').toHTML() %>
 </head>
