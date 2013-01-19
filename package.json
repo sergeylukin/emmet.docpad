@@ -1,0 +1,10 @@
+{
+  "name": "docpad-project",
+  "description": "Just playing with docpad",
+  "version": "1.0.0",
+  "dependencies": {
+    "docpad-plugin-marked": "~2.1.0",
+    "docpad-plugin-eco": "~2.0.1",
+    "docpad-plugin-livereload": "~2.3.0"
+  }
+}
