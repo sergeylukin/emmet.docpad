@@ -2,7 +2,7 @@
 <head>
   <title><%= @site.title %></title>
   <%- @getBlock('meta').toHTML() %>
-  <%- @getBlock('styles').toHTML() %>
+  <%- @getBlock('styles').add(['/styles/main.css']).toHTML() %>
 </head>
 <body>
 <%- @content %>
