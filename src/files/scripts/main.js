@@ -1,14 +1,5 @@
-// Set configuration for optimi
-requirejs.config({
-  optimize: 'uglify',
-  name: 'main',
-  include: 'requireLib',
-  out: 'require.js',
-  paths: {
-    requireLib: 'lib/require'
-  }
-});
+// bootstrap
 
-require(['modules/person'], function(person) {
-  console.log(person.firstname + ' ' + person.lastname);
+require(['modules/app'], function(App) {
+  App.init();
 });
