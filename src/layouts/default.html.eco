@@ -6,6 +6,6 @@
 </head>
 <body>
 <%- @content %>
-<%- @getBlock('scripts').toHTML() %>
+<script src="scripts/libs/require.js" data-main="scripts/main"></script>
 </body>
 </html>
