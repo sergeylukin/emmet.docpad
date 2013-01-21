@@ -1,3 +1,4 @@
 out/
+build/
 node_modules/
 node.core
