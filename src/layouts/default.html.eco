@@ -10,5 +10,6 @@
 <script src="scripts/vendor/require.js" data-main="scripts/main"></script>
 <!-- endbuild -->
 <script>require(['charts']);</script>
+<%- @getBlock('scripts').toHTML() %>
 </body>
 </html>
