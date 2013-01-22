@@ -28,8 +28,6 @@
   // We don't want to optimize anything except modules
   skipDirOptimize: true,
   modules: [
-    {
-      name: 'main'
-    }
+    { name: 'require.config' }
   ]
 })
