@@ -13,7 +13,7 @@
   baseUrl: "./scripts", 
   // mainConfigFile is relative to current file
   // keep all the paths and common stuff in one file
-  mainConfigFile: './out/scripts/require.config.js',
+  mainConfigFile: './out/scripts/main.js',
 
   ////
   // Specify CSS build options below
@@ -22,12 +22,22 @@
   ////
   // Specify JS and general build options below
   //
-  optimize: 'uglify',
+  optimize: 'none',
   // Remove any files that were combined
   removeCombined: true,
   // We don't want to optimize anything except modules
   skipDirOptimize: true,
   modules: [
-    { name: 'require.config' }
+    {
+      name: 'main',
+      include: [
+        'vendor/require'
+      ]
+    },
+
+    {
+      name: 'charts',
+      exclude: [ 'main' ]
+    }
   ]
 })
