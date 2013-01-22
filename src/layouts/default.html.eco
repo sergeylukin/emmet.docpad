@@ -6,11 +6,7 @@
 </head>
 <body>
 <%- @content %>
-<script src="scripts/vendor/require.js"></script>
-<script>
-require(['scripts/main'], function() {
-  require(['charts']);
-});
-</script>
+<script src="scripts/vendor/require.js" data-main="scripts/main"></script>
+<script>require(['charts']);</script>
 </body>
 </html>

@@ -31,7 +31,7 @@
     {
       name: 'main',
       include: [
-        // 'vendor/require'
+        'vendor/require'
       ]
     },
 
