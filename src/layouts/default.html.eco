@@ -6,7 +6,9 @@
 </head>
 <body>
 <%- @content %>
+<!-- build:js /scripts/main.js -->
 <script src="scripts/vendor/require.js" data-main="scripts/main"></script>
+<!-- endbuild -->
 <script>require(['charts']);</script>
 </body>
 </html>

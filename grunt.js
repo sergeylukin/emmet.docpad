@@ -10,6 +10,9 @@ module.exports = function(grunt) {
     // clean: {
     //   folder: 'build'
     // },
+    usemin: {
+      html: ['./build/**/*.html']
+    },
 
     requirejs: {
       compile: {
@@ -32,10 +35,11 @@ module.exports = function(grunt) {
   // Load tasks from NPM
   // grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-usemin');
   // grunt.loadNpmTasks('grunt-contrib-mincss');
 
   // Default task.
   // grunt.registerTask('default', 'clean requirejs mincss');
-  grunt.registerTask('default', 'requirejs');
+  grunt.registerTask('default', 'requirejs usemin');
 
 };

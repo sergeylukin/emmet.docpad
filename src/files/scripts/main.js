@@ -1,6 +1,6 @@
 // The build will inline common dependencies into this file
 require.config({
-  baseUrl: './scripts',
+  baseUrl: '/scripts',
   paths: {
   },
   shim: {
