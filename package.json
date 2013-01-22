@@ -12,6 +12,7 @@
     "docpad-plugin-eco": "~2.0.1",
     "docpad-plugin-stylus": "~2.2.0",
     "docpad-plugin-livereload": "~2.3.0",
-    "requirejs": "~2.1.2"
+    "grunt": "~0.3.17",
+    "grunt-contrib-requirejs": "~0.3.4"
   }
 }
