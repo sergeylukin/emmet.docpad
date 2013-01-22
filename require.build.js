@@ -6,18 +6,18 @@
   //    the latter
   //
   // dir is relative to current file
-  dir: "../../build", 
+  dir: "./build", 
   // appDir is relative to current file
-  appDir: "../", 
+  appDir: "./out", 
   // baseUrl is relative to appDir
   baseUrl: "./scripts", 
   // mainConfigFile is relative to current file
   // keep all the paths and common stuff in one file
-  mainConfigFile: 'require.config.js',
+  mainConfigFile: './out/scripts/require.config.js',
 
   ////
   // Specify CSS build options below
-  optimizeCss: "standard.keepLines",
+  optimizeCss: "standard",
 
   ////
   // Specify JS and general build options below
