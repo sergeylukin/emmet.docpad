@@ -22,7 +22,7 @@
   ////
   // Specify JS and general build options below
   //
-  optimize: 'none',
+  optimize: 'uglify',
   // Remove any files that were combined
   removeCombined: true,
   // We don't want to optimize anything except modules
@@ -31,7 +31,7 @@
     {
       name: 'main',
       include: [
-        'vendor/require'
+        // 'vendor/require'
       ]
     },
 

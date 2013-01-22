@@ -6,6 +6,11 @@
 </head>
 <body>
 <%- @content %>
-<script src="scripts/libs/require.js" data-main="scripts/require.config"></script>
+<script src="scripts/vendor/require.js"></script>
+<script>
+require(['scripts/main'], function() {
+  require(['charts']);
+});
+</script>
 </body>
 </html>
