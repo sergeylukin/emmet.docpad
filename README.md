@@ -17,5 +17,4 @@ This will generate static files in **out** directory:
 
 This will build optimized files in **build** directory:
 
-`./node_modules/requirejs/bin/r.js -o out/scripts/require.build.js`
-
+`grunt`
