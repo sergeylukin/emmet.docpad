@@ -6,23 +6,24 @@ What I want from my project:
   `deploy` command
 - Source be in **source** branch
 
-How to use:
------------
+How to build:
+-------------
 
-`npm install`
+- Install dependencies `npm install`
 
-`docpad run`
+- Run `grunt` and everything will be built into `./dist` directory.
 
-`grunt watch`
+How to develop:
+---------------
 
-do your work in **src** directory and enjoy livereload at `localhost:9778`
 
-when done execute:
+- Install dependencies `npm install`
 
-`docpad generate --env static`
+- Activate watch/server process with `docpad run` and open
+  `http://localhost:9778`
 
-and:
+- Activate lintint/testing with `grunt watch`
 
-`grunt`
+- Develop in `./src` directory and receive immediate feedback in the
+  Browser and in the Terminal
 
-Then you can deploy **dist** directory
