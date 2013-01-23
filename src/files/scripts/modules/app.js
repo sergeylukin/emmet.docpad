@@ -3,7 +3,7 @@ define(function() {
     firstname: "Lorem",
     lastname: "Ipsum",
     init: function() {
-      console.log('App is initialized');
+      // console.log('App is initialized');
     }
   };
 });
