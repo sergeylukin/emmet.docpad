@@ -8,7 +8,7 @@ module.exports = function(grunt) {
     pkg: '<json:package.json>',
 
     lint: {
-      files: ['out-dev/scripts/*.js', 'out-dev/scripts/modules/require.js']
+      files: ['out-dev/scripts/*.js', 'out-dev/scripts/modules/**/*.js']
     },
     jshint: {
       options: {
