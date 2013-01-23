@@ -6,14 +6,14 @@
   //    the latter
   //
   // dir is relative to current file
-  dir: "./build", 
+  dir: "./dist", 
   // appDir is relative to current file
-  appDir: "./out", 
+  appDir: "./out-prod", 
   // baseUrl is relative to appDir
   baseUrl: "./scripts", 
   // mainConfigFile is relative to current file
   // keep all the paths and common stuff in one file
-  mainConfigFile: './out/scripts/main.js',
+  mainConfigFile: './out-prod/scripts/main.js',
 
   ////
   // Specify CSS build options below

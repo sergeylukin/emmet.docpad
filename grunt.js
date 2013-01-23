@@ -1,17 +1,45 @@
 /*global module:false*/
-'use strict';
 
 module.exports = function(grunt) {
+'use strict';
 
   // Project configuration.
   grunt.initConfig({
     pkg: '<json:package.json>',
 
+    lint: {
+      files: ['out-dev/scripts/*.js', 'out-dev/scripts/modules/require.js']
+    },
+    jshint: {
+      options: {
+        curly: true,
+        eqeqeq: true,
+        immed: true,
+        latedef: true,
+        newcap: true,
+        noarg: true,
+        sub: true,
+        undef: true,
+        boss: true,
+        eqnull: true,
+        browser: true
+      },
+      globals: {
+        jQuery: true,
+        require: true,
+        define: true
+      }
+    },
+    watch: {
+      files: '<config:lint.files>',
+      tasks: ['lint']
+    },
+
     // clean: {
     //   folder: 'build'
     // },
     usemin: {
-      html: ['./build/**/*.html']
+      html: ['./out-prod-min/**/*.html']
     },
 
     requirejs: {
@@ -40,6 +68,6 @@ module.exports = function(grunt) {
 
   // Default task.
   // grunt.registerTask('default', 'clean requirejs mincss');
-  grunt.registerTask('default', 'requirejs usemin');
+  grunt.registerTask('default', 'lint requirejs usemin');
 
 };

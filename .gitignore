@@ -1,4 +1,5 @@
-out/
-build/
+out-dev/
+out-prod/
+dist/
 node_modules/
 node.core
