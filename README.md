@@ -11,10 +11,18 @@ How to use:
 
 `npm install`
 
-This will generate static files in **out** directory:
+`docpad run`
 
-`docpad generate`
+`grunt watch`
 
-This will build optimized files in **build** directory:
+do your work in **src** directory and enjoy livereload at `localhost:9778`
+
+when done execute:
+
+`docpad generate --env static`
+
+and:
 
 `grunt`
+
+Then you can deploy **dist** directory
