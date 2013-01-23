@@ -35,11 +35,16 @@ module.exports = function(grunt) {
       tasks: ['lint']
     },
 
-    // clean: {
-    //   folder: 'build'
-    // },
+    exec: {
+      // Clean old dir and generate new production version of docpad website
+      docpad: {
+        command: 'rm -fr out-prod && docpad generate --env static',
+        stdout: true
+      }
+    },
+
     usemin: {
-      html: ['./out-prod-min/**/*.html']
+      html: ['./dist/**/*.html']
     },
 
     requirejs: {
@@ -61,13 +66,11 @@ module.exports = function(grunt) {
   // });
 
   // Load tasks from NPM
-  // grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-usemin');
-  // grunt.loadNpmTasks('grunt-contrib-mincss');
+  grunt.loadNpmTasks('grunt-exec');
 
   // Default task.
-  // grunt.registerTask('default', 'clean requirejs mincss');
-  grunt.registerTask('default', 'lint requirejs usemin');
+  grunt.registerTask('default', 'lint exec:docpad requirejs usemin');
 
 };
