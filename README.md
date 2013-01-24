@@ -1,11 +1,23 @@
 What do I expect from this project
 ----------------------------------
 
-- **DONE** Pre-process, Lint HTML,JS,CSS on files save
-- Lint JS, CSS + Run tests on files save
+- **DONE** Pre-process HTML,JS,CSS on files save
+- **DONE** Lint JS, CSS on files save
 - **DONE** Have modular front-end JavaScript using RequireJS
-- **DONE** Lint, Test, Concatenate, Minificate + update HTML markup if necessary on `build`
+- **DONE** Lint, Concatenate, Minify + update HTML markup if necessary on `build`
+- TDD workflow
 - Push optimized build to any remote branch on `deploy`
+
+
+Important
+---------
+
+You need Grunt v0.4 or later installed. If you have older version:
+
+- Uninstall old grunt package: `npm uninstall -g grunt`
+
+- Install new one: `npm install -g grunt-cli`
+
 
 How to build
 ------------
@@ -14,9 +26,9 @@ How to build
 
 - Run `grunt` and everything will be built into `./dist` directory.
 
+
 How to develop
 --------------
-
 
 - Install dependencies `npm install`
 
