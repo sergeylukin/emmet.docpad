@@ -12,9 +12,13 @@
     "docpad-plugin-eco": "~2.0.1",
     "docpad-plugin-stylus": "~2.2.0",
     "docpad-plugin-livereload": "~2.3.0",
-    "grunt": "~0.3.17",
+    "grunt": "~0.4.0",
+    "grunt-contrib-jshint": "~0.1.0",
+    "grunt-contrib-watch": "~0.1.4",
     "grunt-contrib-requirejs": "~0.3.4",
     "grunt-usemin": "~0.1.2",
-    "grunt-exec": "~0.3.0"
+    "grunt-exec": "https://github.com/sergeylukin/grunt-exec/archive/grunt-0.4-compatible.tar.gz",
+    "csslint": "https://github.com/sergeylukin/csslint/archive/v0.9.10-osfree.tar.gz",
+    "grunt-css": "https://github.com/sergeylukin/grunt-css/archive/v0.5.3-osfree.tar.gz"
   }
 }

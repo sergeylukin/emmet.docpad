@@ -7,10 +7,9 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: '<json:package.json>',
 
-    lint: {
-      files: ['out-dev/scripts/*.js', 'out-dev/scripts/modules/**/*.js']
-    },
     jshint: {
+      all: ['out-dev/scripts/*.js', 'out-dev/scripts/modules/**/*.js'],
+      
       options: {
         curly: true,
         eqeqeq: true,
@@ -22,17 +21,34 @@ module.exports = function(grunt) {
         undef: true,
         boss: true,
         eqnull: true,
-        browser: true
+        browser: true,
+        globals: {
+          jQuery: true,
+          require: true,
+          define: true
+        }
       },
-      globals: {
-        jQuery: true,
-        require: true,
-        define: true
+
+    },
+
+    csslint: {
+      all: {
+        src: 'out-dev/styles/main.css',
+        rules: {
+          import: false
+        }
       }
     },
+
     watch: {
-      files: '<config:lint.files>',
-      tasks: ['lint']
+      scripts: {
+        files: '<%= jshint.all %>',
+        tasks: ['jshint']
+      },
+      styles: {
+        files: '<%= csslint.all.src %>',
+        tasks: ['csslint']
+      }
     },
 
     exec: {
@@ -66,11 +82,14 @@ module.exports = function(grunt) {
   // });
 
   // Load tasks from NPM
+  grunt.loadNpmTasks('grunt-contrib-jshint');
+  grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-usemin');
+  grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-exec');
 
   // Default task.
-  grunt.registerTask('default', 'lint exec:docpad requirejs usemin');
+  grunt.registerTask('default', ['jshint', 'exec:docpad', 'requirejs', 'usemin']);
 
 };
