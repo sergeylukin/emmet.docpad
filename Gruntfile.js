@@ -5,7 +5,7 @@ module.exports = function(grunt) {
 
   // Project configuration.
   grunt.initConfig({
-    pkg: '<json:package.json>',
+    pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
       all: ['out-dev/scripts/*.js', 'out-dev/scripts/modules/**/*.js'],
@@ -56,6 +56,22 @@ module.exports = function(grunt) {
       docpad: {
         command: 'rm -fr out-prod && docpad generate --env static',
         stdout: true
+      },
+      // Switch to dist directory and push it to remote
+      deploy: {
+        command: 'cd ./dist' +
+                // Save current remote URL in variable
+                 ' && target_repo=`git config remote.origin.url`' +
+                 ' && git init' +
+                 ' && git add .' +
+                 " && git commit -m'build'" +
+                // Push commit to URL saved in variable
+                 ' && git push $target_repo master:master --force' +
+                 ' && rm -fr .git' +
+                // Return back like nothing happened :)
+                 ' && cd ../' +
+                 '',
+        stdout: true
       }
     },
 
@@ -70,17 +86,6 @@ module.exports = function(grunt) {
     }
   });
 
-  //   mincss: {
-  //     compile: {
-  //       files: {
-  //         'www-release/css/style.css': 'www-release/css/style.css',
-  //         'www-release/css/bootstrap.css': 'www-release/css/bootstrap.css',
-  //         'www-release/css/bootstrap-responsive.css': 'www-release/css/bootstrap-responsive.css'
-  //       }
-  //     }
-  //   }
-  // });
-
   // Load tasks from NPM
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -91,5 +96,6 @@ module.exports = function(grunt) {
 
   // Default task.
   grunt.registerTask('default', ['jshint', 'exec:docpad', 'requirejs', 'usemin']);
+  grunt.registerTask('deploy', ['default', 'exec:deploy']);
 
 };
