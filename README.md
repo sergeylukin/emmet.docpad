@@ -4,9 +4,8 @@ What do I expect from this project
 - **DONE** Pre-process HTML,JS,CSS on files save
 - **DONE** Lint JS, CSS on files save
 - **DONE** Have modular front-end JavaScript using RequireJS
-- **DONE** Lint, Concatenate, Minify + update HTML markup if necessary on `grunt build`
-- **DONE** Push optimized build to remote branch on `grunt deploy` - that's
-  useful for Github pages for example
+- **DONE** Lint, Concatenate, Minify + update HTML markup if necessary on `grunt` command
+- **DONE** Push optimized website to Github pages on `grunt deploy:gh` command
 - Have TDD workflow in place
 - Have an option to upload assets to CDN and update HTML accordingly on `grunt build`
 

@@ -8,7 +8,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
-      all: ['out-dev/scripts/*.js', 'out-dev/scripts/modules/**/*.js'],
+      dev: ['out-dev/scripts/*.js', 'out-dev/scripts/modules/**/*.js'],
+      prod: ['out-prod/scripts/*.js', 'out-prod/scripts/modules/**/*.js'],
       
       options: {
         curly: true,
@@ -32,8 +33,14 @@ module.exports = function(grunt) {
     },
 
     csslint: {
-      all: {
+      dev: {
         src: 'out-dev/styles/main.css',
+        rules: {
+          import: false
+        }
+      },
+      prod: {
+        src: 'out-prod/styles/main.css',
         rules: {
           import: false
         }
@@ -42,11 +49,11 @@ module.exports = function(grunt) {
 
     watch: {
       scripts: {
-        files: '<%= jshint.all %>',
+        files: '<%= jshint.dev %>',
         tasks: ['jshint']
       },
       styles: {
-        files: '<%= csslint.all.src %>',
+        files: '<%= csslint.dev.src %>',
         tasks: ['csslint']
       }
     },
@@ -57,9 +64,11 @@ module.exports = function(grunt) {
         command: 'rm -fr out-prod && docpad generate --env static',
         stdout: true
       },
-      // Switch to dist directory and push it to remote
-      deploy: {
+      // Switch to dist directory and push it to remote Github repo
+      deploy_ghpages: {
         command: 'cd ./dist' +
+                // Remove unnecessary stuff
+                 ' && rm -f build.txt' +
                 // Save current remote URL in variable
                  ' && target_repo=`git config remote.origin.url`' +
                  ' && git init' +
@@ -75,14 +84,16 @@ module.exports = function(grunt) {
       }
     },
 
-    usemin: {
-      html: ['./dist/**/*.html']
-    },
-
+    // Optimize production website
     requirejs: {
       compile: {
         options: eval(grunt.file.read('./require.build.js'))
       }
+    },
+
+    // Replace HTML markup blocks
+    usemin: {
+      html: ['./dist/**/*.html']
     }
   });
 
@@ -94,8 +105,15 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-exec');
 
-  // Default task.
-  grunt.registerTask('default', ['jshint', 'exec:docpad', 'requirejs', 'usemin']);
-  grunt.registerTask('deploy', ['default', 'exec:deploy']);
+  // Default task - results in ready to deploy production website
+  grunt.registerTask('default', [
+                                 'exec:docpad', // generate production to "out-prod"
+                                 'jshint:prod', // validate JS
+                                 'csslint:prod', // validate CSS
+                                 'requirejs', // optimize production to "dist"
+                                 'usemin' // update HTML markup references in "dist"
+                                ]);
+  // Deploys production website to Github pages
+  grunt.registerTask('deploy:gh', ['default', 'exec:deploy_ghpages']);
 
 };
