@@ -113,6 +113,11 @@ module.exports = function(grunt) {
                                  'requirejs', // optimize production to "dist"
                                  'usemin' // update HTML markup references in "dist"
                                 ]);
+
+  // Run this task on heroku deploy
+  // For more info https://github.com/mbuchetics/heroku-buildpack-nodejs-grunt
+  grunt.registerTask('heroku', ['default']);
+
   // Deploys production website to Github pages
   grunt.registerTask('deploy:gh', ['default', 'exec:deploy_ghpages']);
 
