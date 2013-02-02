@@ -6,6 +6,7 @@ What do I expect from this project
 - **DONE** Have modular front-end JavaScript using RequireJS
 - **DONE** Lint, Concatenate, Minify + update HTML markup if necessary on `grunt` command
 - **DONE** Push optimized website to Github pages on `grunt deploy:gh` command
+- Manage vendor libraries with bower
 - Have TDD workflow in place
 - Have an option to upload assets to CDN and update HTML accordingly on `grunt build`
 
