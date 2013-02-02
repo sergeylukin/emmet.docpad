@@ -24,6 +24,6 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "scripts": {
-    "start": "node_modules/docpad/bin/docpad-server"
+    "postinstall": "echo postinstall time;./node_modules/.bin/grunt"
   }
 }
