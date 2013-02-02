@@ -20,5 +20,9 @@
     "grunt-exec": "https://github.com/sergeylukin/grunt-exec/archive/grunt-0.4-compatible.tar.gz",
     "csslint": "https://github.com/sergeylukin/csslint/archive/v0.9.10-osfree.tar.gz",
     "grunt-css": "https://github.com/sergeylukin/grunt-css/archive/v0.5.3-osfree.tar.gz"
+  },
+  "main": "node_modules/docpad/bin/docpad-server",
+  "scripts": {
+    "start": "node_modules/docpad/bin/docpad-server"
   }
 }
