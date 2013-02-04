@@ -22,8 +22,5 @@
     "grunt-css": "https://github.com/sergeylukin/grunt-css/archive/v0.5.3-osfree.tar.gz",
     "grunt-cli": "~0.1.6"
   },
-  "main": "node_modules/docpad/bin/docpad-server",
-  "scripts": {
-    "postinstall": "echo postinstall time;./node_modules/.bin/grunt"
-  }
+  "main": "node_modules/docpad/bin/docpad-server"
 }
