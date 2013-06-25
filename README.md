@@ -28,7 +28,7 @@ How to build
 
 - Run `docpad generate` to prepare dev version in `./out-dev`
 
-- Run `grunt` and production-ready version will be built into `./dist` directory. **Note**: this step utilizes `./out-dev` directory contents for some pre-processing stuff, so just make sure you run `docpad generate` or `docpad run` before you tend to use it in development environment next time
+- Run `grunt` and production-ready version will be built into `./dist` directory.
 
 
 How to develop

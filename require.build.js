@@ -6,7 +6,7 @@
   //    the latter
   //
   // dir is relative to current file
-  dir: "./out-dev", 
+  dir: "./dist", 
   // appDir is relative to current file
   appDir: "./out-prod", 
   // baseUrl is relative to appDir

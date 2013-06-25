@@ -143,8 +143,8 @@ module.exports = function(grunt) {
                                  'requirejs', // optimize production to "dist"
 
                                  // now copy out-dev to dist
-                                 'clean:dist',
-                                 'copy:dist',
+                                 // 'clean:dist',
+                                 // 'copy:dist',
 
                                  'usemin' // update HTML markup references in "dist"
                                 ]);
