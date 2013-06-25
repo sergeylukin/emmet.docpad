@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 
     jshint: {
       dev: ['tmp/scripts/*.js', 'tmp/scripts/modules/**/*.js'],
-      prod: ['tmp.stage/scripts/*.js', 'tmp.stage/scripts/modules/**/*.js'],
+      stage: ['tmp.stage/scripts/*.js', 'tmp.stage/scripts/modules/**/*.js'],
       
       options: {
         curly: true,
@@ -39,7 +39,7 @@ module.exports = function(grunt) {
           import: false
         }
       },
-      prod: {
+      stage: {
         src: 'tmp.stage/styles/main.css',
         rules: {
           import: false
@@ -59,9 +59,7 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      out_dev: ["tmp"],
-      out_prod: ["tmp.stage"],
-      dist: ["dist"]
+      tmp_stage: ["tmp.stage"]
     },
 
     exec: {
@@ -70,9 +68,9 @@ module.exports = function(grunt) {
         command: 'docpad generate --env development',
         stdout: true
       },
-      // Generate new production version of docpad website
-      docpad_prod: {
-        command: 'docpad generate --env production',
+      // Generate staging files (not optimized, but after preprocessing)
+      docpad_stage: {
+        command: 'docpad generate --env stage',
         stdout: true
       },
       // Switch to dist directory and push it to remote Github repo
@@ -120,25 +118,29 @@ module.exports = function(grunt) {
 
   // Default task - results in ready to deploy production website
   grunt.registerTask('default', [
-                                 // Make sure that development version is there
-                                 // as RequireJS crunches stuff out from there
-                                 // to production version
-                                 //'clean:out_dev',
-                                 //'exec:docpad_dev',
-                                 // Make sure we clean any junk out of
-                                 // production version
-                                 'clean:out_prod',
-                                 'exec:docpad_prod', // generate production to "out-prod"
 
-                                 'jshint:prod', // validate JS
-                                 'csslint:prod', // validate CSS
-                                 'requirejs', // optimize production to "dist"
+                                 // You should manually run `docpad generate`
+                                 // or `docpad run` before following tasks will
+                                 // run successfully!
+                                 //
+                                 // The reason why you should do it manually is
+                                 // that I couldn't make it work from the
+                                 // Grunt,
+                                 // if you succeed - let me know
 
-                                 // remove out-prod directory to avoid
-                                 // confusion
-                                 'clean:out_prod',
+                                 'clean:tmp_stage', // delete old staging files
+                                 'exec:docpad_stage', // generate staging files
+                                 'jshint:stage', // validate JS in staging directory
+                                 'csslint:stage', // validate CSS in staging directory
 
-                                 'usemin' // update HTML markup references in "dist"
+                                 'requirejs', // optimize staging files to
+                                              // distribution directory
+                                 'usemin', // update HTML markup references
+                                           // in distribution directory
+
+                                 // ..and finally..
+                                 'clean:tmp_stage' // ..delete staging files
+                                 // voila! we're done, now I only need `grunt cup:coffee`
                                 ]);
   // Deploys production website to Github pages
   grunt.registerTask('deploy:gh', ['default', 'exec:deploy_ghpages']);

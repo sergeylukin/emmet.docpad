@@ -11,7 +11,7 @@ docpadConfig = {
   environments:
     development:
       outPath: "tmp"
-    production:
+    stage:
       outPath: "tmp.stage"
 
 }

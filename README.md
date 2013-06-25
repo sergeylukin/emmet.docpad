@@ -26,7 +26,8 @@ How to build
 
 - Install dependencies `npm install`
 
-- Run `docpad generate` to prepare dev version in `./tmp`
+- Run `docpad generate` to prepare dev version in `./tmp` (this command has to
+  be run manually because it doesn't run from the Grunt for some reason..)
 
 - Run `grunt` and production-ready version will be built into `./dist` directory.
 
@@ -45,9 +46,28 @@ How to develop
   Browser and in the Terminal
 
 
-TODO
-----
+How build process works
+-----------------------
 
-- instead of replacing script tags with Grunt in preprocessed HTML,
-  replace them with Docpad plugin in layouts before preprocessing is done
-  with docpad plugin
+- When you execute `docpad generate` or `docpad run` docpad generated
+  development (unoptimized) version of app ti `tmp` directory
+
+- When you execute `grunt` few process happen:
+
+    1. Docpad generates staging version of app (without dev plugins, like
+       LiveReload etc.) to `tmp.staging` directory
+    2. RequireJS optimizer takes staging files and crunches them into `dist`
+       directory.
+    3. Staging directory is removed - you end up with `tmp` and `dist`
+       directories
+
+  Now, of course there are some other tasks in the middle of these processes,
+  better look into `Gruntfile.js` to get the exact picture
+
+Things to improve
+-----------------
+
+- instead of replacing script tags with `grunt-usemin` in preprocessed HTML,
+  replace them with Docpad plugin in layouts before preprocessing is done -
+  this will boost up the performance of `grunt` command as it may take some
+  time to parse all generated HTML files in distribution directory..

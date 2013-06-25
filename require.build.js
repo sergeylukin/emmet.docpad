@@ -2,7 +2,7 @@
   ////
   // Specify directories paths below
   // Note: this file will be copied from **project_dir/src/files/scripts/**
-  //    to **project_dir/out/scripts/** so all paths below are relative to
+  //    to **project_dir/dist/scripts/** so all paths below are relative to
   //    the latter
   //
   // dir is relative to current file
