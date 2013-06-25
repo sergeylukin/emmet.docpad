@@ -16,7 +16,7 @@
     "grunt-contrib-jshint": "~0.1.0",
     "grunt-contrib-watch": "~0.1.4",
     "grunt-contrib-requirejs": "~0.3.4",
-    "grunt-usemin": "~0.1.2",
+    "grunt-usemin": "https://github.com/sergeylukin/grunt-usemin/archive/requirejs-force-src.tar.gz",
     "grunt-exec": "~0.4.2",
     "csslint": "https://github.com/sergeylukin/csslint/archive/v0.9.10-osfree.tar.gz",
     "grunt-css": "https://github.com/sergeylukin/grunt-css/archive/v0.5.3-osfree.tar.gz",
