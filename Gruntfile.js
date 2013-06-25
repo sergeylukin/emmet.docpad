@@ -58,10 +58,16 @@ module.exports = function(grunt) {
       }
     },
 
+    rm: {
+      out_prod: {
+        dir: 'out-prod'
+      }
+    },
+
     exec: {
       // Clean old dir and generate new production version of docpad website
       docpad: {
-        command: 'rm -fr out-prod && docpad generate --env static',
+        command: 'docpad generate --env static',
         stdout: true
       },
       // Switch to dist directory and push it to remote Github repo
@@ -104,9 +110,11 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-rm');
 
   // Default task - results in ready to deploy production website
   grunt.registerTask('default', [
+                                 'rm:out_prod',
                                  'exec:docpad', // generate production to "out-prod"
                                  'jshint:prod', // validate JS
                                  'csslint:prod', // validate CSS
