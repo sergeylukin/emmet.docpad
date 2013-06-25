@@ -11,10 +11,8 @@ docpadConfig = {
   environments:
     development:
       outPath: "out-dev"
-    static:
-      outPath: "out-prod"
     production:
-      outPath: "dist"
+      outPath: "out-prod"
 
 }
 

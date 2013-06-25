@@ -17,11 +17,12 @@
     "grunt-contrib-watch": "~0.1.4",
     "grunt-contrib-requirejs": "~0.3.4",
     "grunt-usemin": "~0.1.2",
-    "grunt-exec": "https://github.com/sergeylukin/grunt-exec/archive/grunt-0.4-compatible.tar.gz",
+    "grunt-exec": "~0.4.2",
     "csslint": "https://github.com/sergeylukin/csslint/archive/v0.9.10-osfree.tar.gz",
     "grunt-css": "https://github.com/sergeylukin/grunt-css/archive/v0.5.3-osfree.tar.gz",
     "grunt-cli": "~0.1.6",
-    "grunt-contrib-clean": "~0.4.1"
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-copy": "~0.4.1"
   },
   "main": "node_modules/docpad/bin/docpad-server"
 }

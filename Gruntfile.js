@@ -50,27 +50,34 @@ module.exports = function(grunt) {
     watch: {
       scripts: {
         files: '<%= jshint.dev %>',
-        tasks: ['jshint']
+        tasks: ['jshint:dev']
       },
       styles: {
         files: '<%= csslint.dev.src %>',
-        tasks: ['csslint']
+        tasks: ['csslint:dev']
       }
     },
 
     clean: {
-      out_prod: ["out-prod"]
+      out_dev: ["out-dev"],
+      out_prod: ["out-prod"],
+      dist: ["dist"]
     },
 
     exec: {
-      // Clean old dir and generate new production version of docpad website
-      docpad: {
-        command: 'docpad generate --env static',
+      // Generate new development version of docpad website
+      docpad_dev: {
+        command: 'docpad generate --env development',
+        stdout: true
+      },
+      // Generate new production version of docpad website
+      docpad_prod: {
+        command: 'docpad generate --env production',
         stdout: true
       },
       // Switch to dist directory and push it to remote Github repo
       deploy_ghpages: {
-        command: 'cd ./dist' +
+        command: 'cd ./out-prod' +
                 // Remove unnecessary stuff
                  ' && rm -f build.txt' +
                 // Save current remote URL in variable
@@ -98,6 +105,14 @@ module.exports = function(grunt) {
     // Replace HTML markup blocks
     usemin: {
       html: ['./dist/**/*.html']
+    },
+
+    copy: {
+      dist: {
+        files: [
+          {expand: true, cwd: 'out-dev/', src: ['**'], dest: 'dist/'},
+        ]
+      }
     }
   });
 
@@ -106,17 +121,31 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-exec');
 
   // Default task - results in ready to deploy production website
   grunt.registerTask('default', [
+                                 // Make sure that development version is there
+                                 // as RequireJS crunches stuff out from there
+                                 // to production version
+                                 //'clean:out_dev',
+                                 //'exec:docpad_dev',
+                                 // Make sure we clean any junk out of
+                                 // production version
                                  'clean:out_prod',
-                                 'exec:docpad', // generate production to "out-prod"
+                                 'exec:docpad_prod', // generate production to "out-prod"
+
                                  'jshint:prod', // validate JS
                                  'csslint:prod', // validate CSS
                                  'requirejs', // optimize production to "dist"
+
+                                 // now copy out-dev to dist
+                                 'clean:dist',
+                                 'copy:dist',
+
                                  'usemin' // update HTML markup references in "dist"
                                 ]);
   // Deploys production website to Github pages
