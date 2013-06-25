@@ -21,7 +21,7 @@
     "csslint": "https://github.com/sergeylukin/csslint/archive/v0.9.10-osfree.tar.gz",
     "grunt-css": "https://github.com/sergeylukin/grunt-css/archive/v0.5.3-osfree.tar.gz",
     "grunt-cli": "~0.1.6",
-    "grunt-rm": "0.0.4"
+    "grunt-contrib-clean": "~0.4.1"
   },
   "main": "node_modules/docpad/bin/docpad-server"
 }

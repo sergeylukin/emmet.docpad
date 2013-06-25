@@ -58,10 +58,8 @@ module.exports = function(grunt) {
       }
     },
 
-    rm: {
-      out_prod: {
-        dir: 'out-prod'
-      }
+    clean: {
+      out_prod: ["out-prod"]
     },
 
     exec: {
@@ -107,14 +105,14 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
+  grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-exec');
-  grunt.loadNpmTasks('grunt-rm');
 
   // Default task - results in ready to deploy production website
   grunt.registerTask('default', [
-                                 'rm:out_prod',
+                                 'clean:out_prod',
                                  'exec:docpad', // generate production to "out-prod"
                                  'jshint:prod', // validate JS
                                  'csslint:prod', // validate CSS
