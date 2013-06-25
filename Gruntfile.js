@@ -107,13 +107,6 @@ module.exports = function(grunt) {
       html: ['./dist/**/*.html']
     },
 
-    copy: {
-      dist: {
-        files: [
-          {expand: true, cwd: 'out-dev/', src: ['**'], dest: 'dist/'},
-        ]
-      }
-    }
   });
 
   // Load tasks from NPM
@@ -121,7 +114,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-requirejs');
   grunt.loadNpmTasks('grunt-contrib-clean');
-  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-exec');
@@ -142,9 +134,9 @@ module.exports = function(grunt) {
                                  'csslint:prod', // validate CSS
                                  'requirejs', // optimize production to "dist"
 
-                                 // now copy out-dev to dist
-                                 // 'clean:dist',
-                                 // 'copy:dist',
+                                 // remove out-prod directory to avoid
+                                 // confusion
+                                 'clean:out_prod',
 
                                  'usemin' // update HTML markup references in "dist"
                                 ]);
