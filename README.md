@@ -26,7 +26,7 @@ How to build
 
 - Install dependencies `npm install`
 
-- Run `docpad generate` to prepare dev version in `./out-dev`
+- Run `docpad generate` to prepare dev version in `./tmp`
 
 - Run `grunt` and production-ready version will be built into `./dist` directory.
 

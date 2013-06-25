@@ -10,9 +10,9 @@ docpadConfig = {
   # Environments
   environments:
     development:
-      outPath: "out-dev"
+      outPath: "tmp"
     production:
-      outPath: "out-prod"
+      outPath: "tmp.stage"
 
 }
 

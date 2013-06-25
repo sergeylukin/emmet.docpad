@@ -1,5 +1,5 @@
-out-dev/
-out-prod/
+tmp/
+tmp.stage/
 dist/
 node_modules/
 node.core

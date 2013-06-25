@@ -8,8 +8,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
-      dev: ['out-dev/scripts/*.js', 'out-dev/scripts/modules/**/*.js'],
-      prod: ['out-prod/scripts/*.js', 'out-prod/scripts/modules/**/*.js'],
+      dev: ['tmp/scripts/*.js', 'tmp/scripts/modules/**/*.js'],
+      prod: ['tmp.stage/scripts/*.js', 'tmp.stage/scripts/modules/**/*.js'],
       
       options: {
         curly: true,
@@ -34,13 +34,13 @@ module.exports = function(grunt) {
 
     csslint: {
       dev: {
-        src: 'out-dev/styles/main.css',
+        src: 'tmp/styles/main.css',
         rules: {
           import: false
         }
       },
       prod: {
-        src: 'out-prod/styles/main.css',
+        src: 'tmp.stage/styles/main.css',
         rules: {
           import: false
         }
@@ -59,8 +59,8 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      out_dev: ["out-dev"],
-      out_prod: ["out-prod"],
+      out_dev: ["tmp"],
+      out_prod: ["tmp.stage"],
       dist: ["dist"]
     },
 
@@ -77,7 +77,7 @@ module.exports = function(grunt) {
       },
       // Switch to dist directory and push it to remote Github repo
       deploy_ghpages: {
-        command: 'cd ./out-prod' +
+        command: 'cd ./dist' +
                 // Remove unnecessary stuff
                  ' && rm -f build.txt' +
                 // Save current remote URL in variable
