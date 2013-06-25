@@ -60,7 +60,7 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      tmp_stage: ["tmp.stage"]
+      stage: ["tmp.stage"]
     },
 
     exec: {
@@ -129,7 +129,7 @@ module.exports = function(grunt) {
                                  // Grunt,
                                  // if you succeed - let me know
 
-                                 'clean:tmp_stage', // delete old staging files
+                                 'clean:stage', // delete old staging files
                                  'exec:docpad_stage', // generate staging files
                                  'jshint:stage', // validate JS in staging directory
                                  'csslint:stage', // validate CSS in staging directory
@@ -140,7 +140,7 @@ module.exports = function(grunt) {
                                            // in distribution directory
 
                                  // ..and finally..
-                                 'clean:tmp_stage' // ..delete staging files
+                                 'clean:stage' // ..delete staging files
                                  // voila! we're done, now I only need `grunt cup:coffee`
                                 ]);
   // Deploys production website to Github pages
