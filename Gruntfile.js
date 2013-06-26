@@ -37,13 +37,15 @@ module.exports = function(grunt) {
       dev: {
         src: 'tmp/styles/main.css',
         rules: {
-          import: false
+          import: false,
+          'universal-selector': false
         }
       },
       stage: {
         src: 'tmp.stage/styles/main.css',
         rules: {
-          import: false
+          import: false,
+          'universal-selector': false
         }
       }
     },
