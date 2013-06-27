@@ -1,5 +1,4 @@
-tmp/
-tmp.stage/
+.tmp*/
 dist/
 node_modules/
 node.core

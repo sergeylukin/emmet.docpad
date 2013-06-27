@@ -8,12 +8,12 @@
   // dir is relative to current file
   dir: "./dist", 
   // appDir is relative to current file
-  appDir: "./tmp.stage", 
+  appDir: "./.tmp.stage", 
   // baseUrl is relative to appDir
   baseUrl: "./scripts", 
   // mainConfigFile is relative to current file
   // keep all the paths and common stuff in one file
-  mainConfigFile: './tmp.stage/scripts/main.js',
+  mainConfigFile: './.tmp.stage/scripts/main.js',
 
   ////
   // Specify CSS build options below

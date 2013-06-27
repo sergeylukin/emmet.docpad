@@ -8,8 +8,8 @@ module.exports = function(grunt) {
     pkg: grunt.file.readJSON('package.json'),
 
     jshint: {
-      dev: ['tmp/scripts/*.js', 'tmp/scripts/modules/**/*.js'],
-      stage: ['tmp.stage/scripts/*.js', 'tmp.stage/scripts/modules/**/*.js'],
+      dev: ['.tmp/scripts/*.js', '.tmp/scripts/modules/**/*.js'],
+      stage: ['.tmp.stage/scripts/*.js', '.tmp.stage/scripts/modules/**/*.js'],
       
       options: {
         curly: true,
@@ -35,14 +35,14 @@ module.exports = function(grunt) {
 
     csslint: {
       dev: {
-        src: 'tmp/styles/main.css',
+        src: '.tmp/styles/main.css',
         rules: {
           import: false,
           'universal-selector': false
         }
       },
       stage: {
-        src: 'tmp.stage/styles/main.css',
+        src: '.tmp.stage/styles/main.css',
         rules: {
           import: false,
           'universal-selector': false
@@ -62,7 +62,7 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      stage: ["tmp.stage"]
+      stage: [".tmp.stage"]
     },
 
     exec: {

@@ -47,15 +47,15 @@ How build process works
 -----------------------
 
 - When you execute `docpad generate` or `docpad run` docpad generates
-  development (unoptimized) version of app to `tmp` directory
+  development (unoptimized) version of app to `.tmp` directory
 
 - When you execute `grunt`, few things happen:
 
   1. Docpad generates staging version of app (without dev plugins, like
-     LiveReload etc.) to `tmp.stage` directory
+     LiveReload etc.) to `.tmp.stage` directory
   2. RequireJS optimizer takes staging files and crunches them into `dist`
      directory.
-  3. Staging directory is removed - you end up with `tmp` and `dist`
+  3. Staging directory is removed - you end up with `.tmp` and `dist`
      directories
 
   Now, of course there are some other tasks in the middle of these processes,
