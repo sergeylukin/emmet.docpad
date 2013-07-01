@@ -72,8 +72,11 @@ module.exports = function(grunt) {
         stdout: true
       },
       // Generate staging files (not optimized, but after preprocessing)
+      // In docpad, static is used for production ready build
+      // We use it as a pre-production build (staging), but
+      // still environment name for docpad is "static"
       docpad_stage: {
-        command: 'docpad generate --env stage',
+        command: 'docpad generate --env static',
         stdout: true
       },
       // Switch to dist directory and push it to remote Github repo

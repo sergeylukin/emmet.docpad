@@ -11,7 +11,9 @@ docpadConfig = {
   environments:
     development:
       outPath: ".tmp"
-    stage:
+    # Because we utilize Grunt for optimization processed
+    # docpad's static build is a staging one before Grunt
+    static:
       outPath: ".tmp.stage"
 
 }
