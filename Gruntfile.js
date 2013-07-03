@@ -106,10 +106,23 @@ module.exports = function(grunt) {
       }
     },
 
+    rev: {
+      dist: {
+        files: {
+          src: [
+            './dist/scripts/{,*/}*.js',
+            './dist/styles/{,*/}*.css',
+            './dist/images/{,*/}*.{png,jpg,jpeg,gif,webp}',
+            './dist/styles/fonts/*'
+          ]
+        }
+      }
+    },
+
     // Replace HTML markup blocks
     usemin: {
       html: ['./dist/**/*.html']
-    },
+    }
 
   });
 
@@ -121,6 +134,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-usemin');
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-exec');
+  grunt.loadNpmTasks('grunt-rev');
 
   // Default task - results in ready to deploy production website
   grunt.registerTask('default', [
@@ -141,6 +155,10 @@ module.exports = function(grunt) {
 
                                  'requirejs', // optimize staging files to
                                               // distribution directory
+
+                                 // Revision assets
+                                 'rev',
+
                                  'usemin', // update HTML markup references
                                            // in distribution directory
 

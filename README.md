@@ -6,12 +6,12 @@ What do I expect from this project
 - **DONE** Have modular front-end JavaScript using RequireJS
 - **DONE** Lint, Concatenate, Minify + update HTML markup if necessary on `grunt` command
 - **DONE** Push optimized website to Github pages on `grunt deploy:gh` command
+- **DONE** Revision static file assets according to their content, so instead of
+  `main.js` have something like `9bec739.main.js`
 - Manage vendor libraries with bower
 - Have TDD workflow in place
 - Have an option to upload assets to CDN and update HTML accordingly on `grunt build`
 - Add support for Browserify
-- Revision static file assets according to their content, so instead of
-  `main.js` have something like `9bec739.main.js`
 
 
 Important

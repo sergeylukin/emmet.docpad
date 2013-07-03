@@ -22,7 +22,8 @@
     "grunt-css": "https://github.com/sergeylukin/grunt-css/archive/v0.5.3-osfree.tar.gz",
     "grunt-cli": "~0.1.6",
     "grunt-contrib-clean": "~0.4.1",
-    "grunt-contrib-copy": "~0.4.1"
+    "grunt-contrib-copy": "~0.4.1",
+    "grunt-rev": "~0.1.0"
   },
   "main": "node_modules/docpad/bin/docpad-server"
 }
