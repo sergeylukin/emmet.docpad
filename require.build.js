@@ -23,8 +23,13 @@
   // Specify JS and general build options below
   //
   optimize: 'uglify',
-  // Remove any files that were combined
-  removeCombined: true,
+  // Don't remove any files that were combined
+  // If set to TRUE, then any dependencies from
+  // bower_components will be removed as well
+  // which is not fatal because we can always run
+  // bower install again but it's annoying to do so
+  // after every build, so let's just not remove those files
+  removeCombined: false,
   // We don't want to optimize anything except modules
   skipDirOptimize: true,
   modules: [
