@@ -12,6 +12,7 @@ What do I expect from this project
 - Have TDD workflow in place
 - Have an option to upload assets to CDN and update HTML accordingly on `grunt build`
 - Add support for Browserify
+- Add custom JS/CSS assets per page via YAML front matter
 
 
 Important
