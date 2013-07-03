@@ -30,9 +30,7 @@
   modules: [
     {
       name: 'main',
-      include: [
-        '../bower_components/almond/almond.js'
-      ]
+      include: ['almond']
     },
 
     {
