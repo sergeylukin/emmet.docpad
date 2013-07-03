@@ -50,6 +50,26 @@ How to develop
 - Develop in `./src` directory and receive immediate feedback in the
   Browser and in the Terminal
 
+Using vendor library
+--------------------
+
+For example you need `jQuery`. Do following:
+
+- `bower install jquery --save` to install the component and add it to the
+  `bower.json`
+
+- In `scripts/main.js` or any other stand-alone script do something like:
+
+  ```
+  require(['jquery'], function($) {
+    console.log('Here you go, we have jquery available: ' + $);
+  });
+  ```
+
+Next time you run `grunt` all will be bundled together in proper order and
+minified - what can be better?
+
+
 
 How build process works
 -----------------------
