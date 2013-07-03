@@ -31,7 +31,7 @@
     {
       name: 'main',
       include: [
-        '../bower_components/requirejs/require.js'
+        '../bower_components/almond/almond.js'
       ]
     },
 
