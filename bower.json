@@ -1,0 +1,7 @@
+{
+  "name": "emmet.docpad",
+  "version": "0.0.0",
+  "dependencies": {
+    "requirejs": "~2.1.6"
+  }
+}

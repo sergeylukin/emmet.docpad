@@ -8,7 +8,7 @@ What do I expect from this project
 - **DONE** Push optimized website to Github pages on `grunt deploy:gh` command
 - **DONE** Revision static file assets according to their content, so instead of
   `main.js` have something like `9bec739.main.js`
-- Manage vendor libraries with bower
+- **DONE** Manage vendor libraries with bower
 - Have TDD workflow in place
 - Have an option to upload assets to CDN and update HTML accordingly on `grunt build`
 - Add support for Browserify
@@ -30,6 +30,8 @@ How to build
 
 - Install dependencies `npm install`
 
+- Install vendor components `bower install`
+
 - Run `grunt` and production-ready version will be built into `./dist` directory.
 
 
@@ -37,6 +39,8 @@ How to develop
 --------------
 
 - Install dependencies `npm install`
+
+- Install vendor components `bower install`
 
 - Activate watch/server process with `docpad run` and open
   `http://localhost:9778`

@@ -122,6 +122,13 @@ module.exports = function(grunt) {
     // Replace HTML markup blocks
     usemin: {
       html: ['./dist/**/*.html']
+    },
+
+    // Set paths for bower components in RequireJS configuration file
+    bower: {
+      stage: {
+        rjsConfig: './.tmp.stage/scripts/main.js'
+      }
     }
 
   });
@@ -135,6 +142,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-css');
   grunt.loadNpmTasks('grunt-exec');
   grunt.loadNpmTasks('grunt-rev');
+  grunt.loadNpmTasks('grunt-bower-requirejs');
 
   // Default task - results in ready to deploy production website
   grunt.registerTask('default', [
@@ -143,6 +151,9 @@ module.exports = function(grunt) {
                                  'exec:docpad_stage', // generate staging files
                                  'jshint:stage', // validate JS in staging directory
                                  'csslint:stage', // validate CSS in staging directory
+
+                                 // Add bower components path to RequireJS
+                                 'bower:stage',
 
                                  'requirejs', // optimize staging files to
                                               // distribution directory
