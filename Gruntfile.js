@@ -66,15 +66,13 @@ module.exports = function(grunt) {
     },
 
     exec: {
-      // Generate new development version of docpad website
-      docpad_dev: {
-        command: 'docpad generate --env development',
-        stdout: true
-      },
       // Generate staging files (not optimized, but after preprocessing)
       // In docpad, static is used for production ready build
       // We use it as a pre-production build (staging), but
       // still environment name for docpad is "static"
+      //
+      // TODO: replace this with docpad wrapper using docpad API
+      //
       docpad_stage: {
         command: 'docpad generate --env static',
         stdout: true
@@ -106,6 +104,8 @@ module.exports = function(grunt) {
       }
     },
 
+    // Rename asset files to include content's hash in filenames
+    // For example: main.js -> 9e34vn.main.js
     rev: {
       dist: {
         files: {
@@ -138,15 +138,6 @@ module.exports = function(grunt) {
 
   // Default task - results in ready to deploy production website
   grunt.registerTask('default', [
-
-                                 // You should manually run `docpad generate`
-                                 // or `docpad run` before following tasks will
-                                 // run successfully!
-                                 //
-                                 // The reason why you should do it manually is
-                                 // that I couldn't make it work from the
-                                 // Grunt,
-                                 // if you succeed - let me know
 
                                  'clean:stage', // delete old staging files
                                  'exec:docpad_stage', // generate staging files
