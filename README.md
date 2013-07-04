@@ -35,6 +35,25 @@ How to build
 - Run `grunt` and production-ready version will be built into `./dist` directory.
 
 
+How to build (detailed version)
+-------------------------------
+
+Install [git](http://git-scm.com/) and [node (with npm)](http://nodejs.org/) then run in a terminal:
+
+```bash
+    git clone https://github.com/sergeylukin/emmet.docpad.git
+    # or if you want default jade template instead of eco template :
+    git clone https://github.com/gammanu/jade.emmet.docpad.git
+    # Install dependencies
+    npm install
+    # Install vendor components `bower install` or
+    node_modules/bower/bin/bower install
+    # if you don't have bower in $PATH.
+    # then run `grunt` to build a production-ready version into `./dist` directory or
+    node_modules/grunt-cli/bin/grunt
+    # if you don't have grunt in $PATH.
+```
+
 How to develop
 --------------
 

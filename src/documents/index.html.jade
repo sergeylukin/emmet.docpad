@@ -1,0 +1,9 @@
+---
+layout: default
+title: index
+---
+h1 Posts
+each post in getFilesAtPath('posts').toJSON()
+	a(href=post.url)= post.title
+	br
+
