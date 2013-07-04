@@ -28,38 +28,23 @@ You need Grunt v0.4 or later installed. If you have older version:
 How to build
 ------------
 
-- Install dependencies `npm install`
+- Install [git](http://git-scm.com/) (optional) and [node (with npm)](http://nodejs.org/)
 
-- Install vendor components `bower install`
+- Install Grunt and Bower: `npm install -g grunt-cli bower`
 
-- Run `grunt` and production-ready version will be built into `./dist` directory.
+- Clone the skeleton `git clone https://github.com/sergeylukin/emmet.docpad.git` or [download archive](https://github.com/sergeylukin/emmet.docpad/archive/source.zip)
 
+- CD into cloned/extracted directory and install skeleton dependencies `npm install` and `bower install`
 
-How to build (detailed version)
--------------------------------
+- Build with `grunt` (production-ready project will be built into `./dist`
+  directory)
 
-Install [git](http://git-scm.com/) and [node (with npm)](http://nodejs.org/) then run in a terminal:
-
-```bash
-    git clone https://github.com/sergeylukin/emmet.docpad.git
-    # or if you want default jade template instead of eco template :
-    git clone https://github.com/gammanu/jade.emmet.docpad.git
-    # Install dependencies
-    npm install
-    # Install vendor components `bower install` or
-    node_modules/bower/bin/bower install
-    # if you don't have bower in $PATH.
-    # then run `grunt` to build a production-ready version into `./dist` directory or
-    node_modules/grunt-cli/bin/grunt
-    # if you don't have grunt in $PATH.
-```
 
 How to develop
 --------------
 
-- Install dependencies `npm install`
-
-- Install vendor components `bower install`
+Follow "How to build" steps above and instead of running `grunt` command, do
+following:
 
 - Activate watch/server process with `docpad run` and open
   `http://localhost:9778`
