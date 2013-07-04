@@ -46,13 +46,12 @@ Install [git](http://git-scm.com/) and [node (with npm)](http://nodejs.org/) the
     git clone https://github.com/gammanu/jade.emmet.docpad.git
     # Install dependencies
     npm install
-    # Install grunt if it wasn't :
-    npm install -g grunt-cli
     # Install vendor components `bower install` or
     node_modules/bower/bin/bower install
     # if you don't have bower in $PATH.
-    # then, to build a production-ready version into `./dist` directory :
-    grunt
+    # then run `grunt` to build a production-ready version into `./dist` directory or
+    node_modules/grunt-cli/bin/grunt
+    # if you don't have grunt in $PATH.
 ```
 
 How to develop

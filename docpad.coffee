@@ -15,7 +15,12 @@ docpadConfig = {
     # docpad's static build is a staging one before Grunt
     static:
       outPath: ".tmp.stage"
-
+  # =================================
+  # Plugins
+  plugins:
+    jade:
+      jadeOptions:
+        pretty: true
 }
 
 # Export the Configuration
