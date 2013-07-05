@@ -2,6 +2,7 @@
 require.config({
   baseUrl: '/scripts',
   paths: {
+    'live-reload-socket-io': '../socket.io/socket.io'
   },
   shim: {
   },

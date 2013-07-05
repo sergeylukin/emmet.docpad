@@ -14,4 +14,12 @@ html
 		script(src="/scripts/charts.js")
 		// endbuild
 		script require(['charts'])
+
+		if getEnvironment() == 'development'
+			// Ok, because there are known issues with socket.io client when using in
+			// tandem with RequireJS, see for details:
+			// https://github.com/docpad/docpad-plugin-livereload/issues/5
+			// we inject this custom live-reload module that fixes that
+			script require(['modules/live-reload'])
+
 		!= getBlock('scripts').toHTML()

@@ -11,6 +11,9 @@ docpadConfig = {
   environments:
     development:
       outPath: ".tmp"
+      plugins:
+        livereload:
+          populateCollections: false
     # Because we utilize Grunt for optimization processed
     # docpad's static build is a staging one before Grunt
     static:
