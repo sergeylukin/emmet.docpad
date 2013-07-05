@@ -8,6 +8,7 @@ html
 	body
 		!= content
 		// build:rawjs /scripts/main.js
+		<script src="/socket.io/socket.io.js"></script>
 		script(src="/scripts/vendor/require.js", data-main="/scripts/main")
 		// endbuild
 		// build:js /scripts/charts.js
