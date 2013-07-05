@@ -31,16 +31,5 @@
   // after every build, so let's just not remove those files
   removeCombined: false,
   // We don't want to optimize anything except modules
-  skipDirOptimize: true,
-  modules: [
-    {
-      name: 'main',
-      include: ['almond']
-    },
-
-    {
-      name: 'charts',
-      exclude: [ 'main' ]
-    }
-  ]
+  skipDirOptimize: true
 })

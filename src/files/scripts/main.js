@@ -4,8 +4,18 @@ require.config({
   paths: {
   },
   shim: {
-    'vendor/foo': [ 'vendor/bar' ]
-  }
+  },
+  modules: [
+    {
+      name: 'main',
+      include: ['almond']
+    },
+
+    {
+      name: 'charts',
+      exclude: [ 'main' ]
+    }
+  ]
 });
 
 // Bootstrap the app here
