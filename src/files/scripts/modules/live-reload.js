@@ -1,4 +1,4 @@
-define('live-reload', [ 'live-reload-socket-io' ], function ( io ) {
+define([ 'live-reload-socket-io' ], function ( io ) {
     (function() {
         /* Did we just livereload? */
         var log = true && localStorage && console && console.log && true;
