@@ -62,7 +62,17 @@ module.exports = function(grunt) {
     },
 
     clean: {
-      stage: [".tmp.stage"]
+      stage: [".tmp.stage"],
+      // After RequireJS optimizes staging files it leaves all the original
+      // files untouched. So instead of letting it delete automatically and
+      // trying to preserve files we don't want to delete, we can
+      // manually tweak it like we do it here
+      //
+      // More details on:
+      // https://github.com/sergeylukin/emmet.docpad/commit/d0b4265e8b4dc8dd364e69059512220868892ff3
+      js_prod: ["dist/scripts/modules", "dist/scripts/vendor"],
+      // same for stylesheets
+      css_prod: ["dist/styles/reset.css"]
     },
 
     exec: {
@@ -157,6 +167,9 @@ module.exports = function(grunt) {
 
                                  'requirejs', // optimize staging files to
                                               // distribution directory
+
+                                 'clean:js_prod', // clean unused JS files
+                                 'clean:css_prod', // clean unused CSS files
 
                                  // Revision assets
                                  'rev',
