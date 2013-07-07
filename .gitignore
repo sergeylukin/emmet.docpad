@@ -3,3 +3,4 @@ dist/
 node_modules/
 node.core
 bower_components/
+plugins/
