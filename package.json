@@ -31,10 +31,12 @@
     "grunt-rev": "~0.1.0",
     "bower": "~0.10.0",
     "grunt-bower-requirejs": "~0.5.0",
-
     "grunt-cafe-mocha": "~0.1.1",
     "jscoverage": "~0.3.6",
     "chai": "~1.5.0"
   },
-  "main": "node_modules/docpad/bin/docpad-server"
+  "main": "node_modules/docpad/bin/docpad-server",
+  "devDependencies": {
+    "docpad-plugin-bowermount": "~2.0.2"
+  }
 }
