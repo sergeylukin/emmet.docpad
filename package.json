@@ -18,7 +18,7 @@
     "docpad-plugin-highlightjs": "~2.1.4",
     "docpad-plugin-livereload": "https://github.com/sergeylukin/docpad-plugin-livereload/archive/master.tar.gz",
     "grunt": "~0.4.0",
-    "grunt-contrib-jshint": "~0.1.0",
+    "grunt-contrib-jshint": "0.6.x",
     "grunt-contrib-watch": "~0.1.4",
     "grunt-contrib-requirejs": "~0.3.4",
     "grunt-usemin": "https://github.com/sergeylukin/grunt-usemin/archive/requirejs-force-src.tar.gz",
