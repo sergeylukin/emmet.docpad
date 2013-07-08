@@ -100,4 +100,4 @@ Things to improve
   replace them with Docpad plugin in layouts before preprocessing is done -
   this will boost up the performance of `grunt` command as it may take some
   time to parse all generated HTML files in distribution directory..
-- Move `src/files/scripts/vendor/require.js` to bower and use it from there
+- **DONE** Move `src/files/scripts/vendor/require.js` to bower and use it from there
