@@ -37,6 +37,6 @@
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "devDependencies": {
-    "docpad-plugin-bowermount": "~2.0.2"
+    "docpad-plugin-bowermount": "~2.1.0"
   }
 }
