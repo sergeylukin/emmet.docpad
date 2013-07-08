@@ -24,6 +24,10 @@ You need Grunt v0.4 or later installed. If you have older version:
 
 - Install new one: `npm install -g grunt-cli`
 
+Please note that branch `backbone` is an add-on based on branch `source` so
+whenever there is an update on latter, `backbone` branch is rebased against it.
+So please don't rely on it's `HEAD`
+
 
 How to build
 ------------

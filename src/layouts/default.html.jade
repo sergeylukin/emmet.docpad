@@ -7,6 +7,9 @@ html
 		!= getBlock('styles').add(['/styles/main.css']).toHTML()
 	body
 		!= content
+		// Application container
+		#page Loading..
+
 		// build:js /scripts/main.js
 		script(src="/scripts/requirejs.js")
 		script(src="/scripts/main.js")
