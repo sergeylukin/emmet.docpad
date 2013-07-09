@@ -33,7 +33,8 @@
     "grunt-bower-requirejs": "~0.5.0",
     "grunt-cafe-mocha": "~0.1.1",
     "jscoverage": "~0.3.6",
-    "chai": "~1.5.0"
+    "chai": "~1.5.0",
+    "docpad-plugin-bowerrequirejs": "~2.1.0"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "devDependencies": {

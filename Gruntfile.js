@@ -163,7 +163,7 @@ module.exports = function(grunt) {
                                  'csslint:stage', // validate CSS in staging directory
 
                                  // Add bower components path to RequireJS
-                                 'bower:stage',
+                                 // 'bower:stage',
 
                                  'requirejs', // optimize staging files to
                                               // distribution directory
