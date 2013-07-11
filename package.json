@@ -7,7 +7,7 @@
     "npm": "1.1.x"
   },
   "dependencies": {
-    "docpad": "6.42.0",
+    "docpad": "6.42.x",
     "docpad-plugin-marked": "~2.1.0",
     "docpad-plugin-coffeescript": "~2.2.1",
     "docpad-plugin-jade": "~2.3.1",
@@ -34,10 +34,10 @@
     "grunt-cafe-mocha": "~0.1.1",
     "jscoverage": "~0.3.6",
     "chai": "~1.5.0",
-    "docpad-plugin-bowerrequirejs": "~2.1.0"
+    "docpad-plugin-bowerrequirejs": "2"
   },
   "main": "node_modules/docpad/bin/docpad-server",
   "devDependencies": {
-    "docpad-plugin-bowermount": "~2.1.0"
+    "docpad-plugin-bowermount": "2"
   }
 }
