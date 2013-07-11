@@ -15,8 +15,8 @@ html
 		// charts.js is here for the sake of multi modules example
 		// TODO: inject it on specific pages where specified so
 		// build:js /scripts/charts.js
+		script(src="/scripts/charts.js")
 		// endbuild
-		script require(['charts'])
 
 		if getEnvironment() == 'development'
 			// Ok, because there are known issues with socket.io client when using in
