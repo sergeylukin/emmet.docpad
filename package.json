@@ -7,7 +7,7 @@
     "npm": "1.1.x"
   },
   "dependencies": {
-    "docpad": "6.42.x",
+    "docpad": "6.45.x",
     "docpad-plugin-marked": "~2.1.0",
     "docpad-plugin-coffeescript": "~2.2.1",
     "docpad-plugin-jade": "~2.3.1",
