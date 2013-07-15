@@ -14,6 +14,8 @@ docpadConfig = {
       plugins:
         livereload:
           populateCollections: false
+        bowermount:
+          excludes: ['live-reload-socket-io']
     # Because we utilize Grunt for optimization processed
     # docpad's static build is a staging one before Grunt
     static:
