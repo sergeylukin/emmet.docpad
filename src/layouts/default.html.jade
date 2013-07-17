@@ -7,16 +7,14 @@ html
 		!= getBlock('styles').add(['/styles/main.css']).toHTML()
 	body
 		!= content
-		// build:rawjs /scripts/main.js
+		// build:js /scripts/main.js
 		script(src="/scripts/requirejs.js")
 		script(src="/scripts/main.js")
 		// endbuild
 
-		// charts.js is here for the sake of multi modules example
-		// TODO: inject it on specific pages where specified so
-		// build:js /scripts/charts.js
-		script(src="/scripts/charts.js")
-		// endbuild
+		- if (typeof(scripts) !== 'undefined') {
+			!= scripts
+		- }
 
 		if getEnvironment() == 'development'
 			// Ok, because there are known issues with socket.io client when using in
@@ -24,5 +22,4 @@ html
 			// https://github.com/docpad/docpad-plugin-livereload/issues/5
 			// we inject this custom live-reload module that fixes that
 			script require(['modules/live-reload'])
-
 		!= getBlock('scripts').toHTML()
