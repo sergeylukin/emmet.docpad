@@ -39,7 +39,7 @@ docpadConfig = {
           scripts.forEach (scriptName) ->
             scriptBlock = """
                 \n    <!-- build:js /scripts/#{scriptName}.js-->
-                    <script>require(['charts'])</script>
+                    <script>require(['#{scriptName}'])</script>
                     <!-- endbuild-->
                 """
 
