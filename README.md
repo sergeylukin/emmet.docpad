@@ -30,9 +30,11 @@ How to build
 
 - Install [git](http://git-scm.com/) (optional) and [node (with npm)](http://nodejs.org/)
 
-- Install Grunt and Bower: `npm install -g grunt-cli bower`
+- Install Grunt and Bower: `npm install -g grunt-cli bower docpad`
 
 - Clone the skeleton `git clone https://github.com/sergeylukin/emmet.docpad.git` or [download archive](https://github.com/sergeylukin/emmet.docpad/archive/source.zip)
+
+- Switch to the source branch `git checkout source`
 
 - CD into cloned/extracted directory and install skeleton dependencies `npm install` and `bower install`
 
