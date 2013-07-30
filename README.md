@@ -48,6 +48,8 @@ How to develop
 Follow "How to build" steps above and instead of running `grunt` command, do
 following:
 
+- First run `npm install -d` to install devDependencies
+
 - Activate watch/server process with `docpad run` and open
   `http://localhost:9778`
 
