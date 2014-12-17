@@ -1,0 +1,1 @@
+define("modules/charts",["modules/app"],function(e){return{init:function(){console.log("Charts initialized!")}}}),require(["modules/charts"],function(e){e.init()}),define("charts",function(){});
