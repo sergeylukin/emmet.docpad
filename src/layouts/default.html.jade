@@ -5,10 +5,12 @@ html
 		title= site.title
 		!= getBlock('meta').toHTML()
 		!= getBlock('styles').add(['/styles/main.css']).toHTML()
+		// build:js /scripts/requirejs.js
+		script(src="/scripts/requirejs.js")
+		// endbuild
 	body
 		!= content
 		// build:js /scripts/main.js
-		script(src="/scripts/requirejs.js")
 		script(src="/scripts/main.js")
 		// endbuild
 

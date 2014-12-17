@@ -2,7 +2,7 @@
 docpadConfig = {
   templateData:
     site:
-      title: "My Webzite"
+      title: "My website"
   ignorePatterns: true
   ignoreCustomPatterns: /^_.+\.styl$/i
 
@@ -15,7 +15,7 @@ docpadConfig = {
         livereload:
           populateCollections: false
         bowermount:
-          excludes: ['live-reload-socket-io']
+          excludes: ['primus']
     # Because we utilize Grunt for optimization processed
     # docpad's static build is a staging one before Grunt
     static:

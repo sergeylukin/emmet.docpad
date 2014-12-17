@@ -1,25 +1,37 @@
-define([ 'live-reload-socket-io' ], function ( io ) {
-    (function() {
+define('modules/live-reload', ['primus'], function (Primus) {
+  (function() {     
+
         /* Did we just livereload? */
-        var log = true && localStorage && console && console.log && true;
+        var log = !!(localStorage && console && console.log && true);
         if ( log && localStorage.getItem('/docpad-livereload/reloaded') === 'yes' ) {
             localStorage.removeItem('/docpad-livereload/reloaded');
-            console.log('LiveReloaded at', new Date());
+            console.log('LiveReload completed at', new Date());
         }
+
         /* Listen for the regenerated event and perform a reload of the page when the event occurs */
         var listen = function(){
-            var socket = io.connect('/docpad-livereload');
-            socket.on('regenerated',function(){
-                if ( log ) {
-                    localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+            var primusConnection = new Primus('/docpad-livereload');
+            primusConnection.on('data', function(data){
+                if ( data && data.message ) {
+                    if ( data.message === 'generateBefore' ) {
+                        if ( log ) {
+                            console.log('LiveReload started at', new Date());
+                        }
+                        if ( typeof document.getElementsByTagName !== 'undefined' ) {
+                            document.getElementsByTagName('html')[0].className += ' wait';
+                        }
+                    }
+                    else if ( data.message === 'generateAfter' ) {
+                        if ( log ) {
+                            localStorage.setItem('/docpad-livereload/reloaded', 'yes');
+                        }
+                        document.location.reload();
+                    }
                 }
-                document.location.reload();
             });
         };
-        if ( typeof io !== 'undefined' ) {
-            listen();
-        } else {
-            console.log( 'io is undefined' );
-        }
-    })();
+
+        listen();
+
+  })(); 
 });
